@@ -1,0 +1,150 @@
+header{
+  display: flex;
+  height: 3rem;
+  padding: 2rem;
+  img{
+    width: 120px;
+    margin-right: 2rem;
+  }
+
+  input{
+    width: 500px;
+    border: 2px solid #eee;
+    border-radius: 30px;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  label{
+    right: 50px;
+    position: relative;
+    min-width: 23px;
+    margin: auto 4px;
+    height: 45%;
+  }
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  .nav-list{
+    border: 1px solid #eee;
+    margin: 0rem;
+    .nav-item{
+      text-align: left;
+      list-style: none;
+      padding: 1rem;
+      position: relative;
+      a{
+        color: #000;
+        text-decoration: none;
+
+        &.active{
+          color:cadetblue;
+          font-weight: bold;
+        }
+      }
+
+      &::after{
+        content: "";
+        background: url(./assets/icon.svg);
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: -16px;
+        top: 17px;
+        background-size: cover;
+      }
+    }
+  }
+
+  .news-block{
+    border: 1px solid #eee;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    h2{
+      text-align: left;
+    }
+
+    .news-list{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 2rem;
+      
+      .newsItem{
+        border-radius: 5px;
+        border: 1px solid #eee;
+        margin-bottom: 2rem;
+        text-align: left;
+        a{
+          color: #000;
+          text-decoration: none;
+        }
+    
+        .photo{
+          height: 225px;
+          background-size: cover;
+        }
+    
+        .title{
+          font-size: 1.2rem;
+          font-weight: bold;
+          height: 7rem;
+          padding: 1rem;
+        }
+    
+        span{
+          color: #999;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+footer{
+  position: fixed;
+  bottom: 0px;
+  background-color: #FFF;
+  border-top: 1px solid #eee;
+  width: 100%;
+
+  ul{
+    display: flex;
+    li{
+      list-style: none;
+      margin-right: 1rem;
+      a{
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 960px) {
+  .main{
+    grid-template-columns: 75px 1fr;
+    .nav-list{
+      .nav-item{
+        height: 33px;
+        a{
+          
+          span{
+            display: none;
+            
+          }
+        }
+      }
+    }
+    .news-block{
+      .news-list{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
